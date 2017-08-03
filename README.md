@@ -1,3 +1,7 @@
+[![Gem Version](https://img.shields.io/gem/v/better_errors-pry.svg)](https://rubygems.org/gems/better_errors-pry)
+[![Build Status](https://travis-ci.org/RobinDaugherty/better_errors-pry.svg?branch=master)](https://travis-ci.org/RobinDaugherty/better_errors-pry)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6140d26c9789476f84cc3963631e7860)](https://www.codacy.com/app/robindaugherty/better_errors-pry?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RobinDaugherty/better_errors-pry&amp;utm_campaign=Badge_Grade)
+
 # BetterErrors::Pry
 
 [Better Errors](https://github.com/charliesome/better_errors) is a gem that provides a very useful error page for Ruby web/API applications.
