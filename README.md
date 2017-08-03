@@ -18,6 +18,8 @@ end
 **It's important to keep this in the development group.**
 See [Better Errors](https://github.com/charliesome/better_errors) for more information.
 
+[`binding_of_caller`](https://github.com/banister/binding_of_caller) is required by this gem, since it's necessary to be able to run Pry in the context of the exception that was raised.
+
 And then execute:
 
     $ bundle
