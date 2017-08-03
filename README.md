@@ -1,39 +1,46 @@
 # BetterErrors::Pry
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/better_errors/pry`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[Better Errors](https://github.com/charliesome/better_errors) is a gem that provides a very useful error page for Ruby web/API applications.
+This gem adds [Pry](http://pryrepl.org) support to Better Errors.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this to your application's Gemfile, in the same group as better_errors:
 
 ```ruby
-gem 'better_errors-pry'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'better_errors-pry'
+end
 ```
+
+**It's important to keep this in the development group.**
+See [Better Errors](https://github.com/charliesome/better_errors) for more information.
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install better_errors-pry
-
 ## Usage
 
-TODO: Write usage instructions here
+See [Better Errors](https://github.com/charliesome/better_errors#usage) for more information.
+
+When you see the Better Errors console, you can issue Pry-specific commands, such as `ls` and `cd`.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/better_errors-pry.
-
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 
