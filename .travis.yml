@@ -13,6 +13,7 @@ gemfile:
   - gemfiles/pry_0.10.gemfile
   - gemfiles/pry_0.11.gemfile
 matrix:
+  fast_finish: true
   allow_failures:
+    - gemfile: gemfiles/pry_0.11.gemfile
     - rvm: ruby-head
-    - gemfile: gemfiles/pry-0.11.gemfile
