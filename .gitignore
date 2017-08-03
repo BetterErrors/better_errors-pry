@@ -8,6 +8,8 @@
 /spec/reports/
 /tmp/
 
+*.gem
+
 # Ignore the lock files created for Appraisal's generated gemfiles.
 gemfiles/*.lock
 gemfiles/.bundle

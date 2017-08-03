@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "better_errors", github: "charliesome/better_errors"
 gem "appraisal"
 gem "pry", "~> 0.10.0"
 
