@@ -15,18 +15,19 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
+    f.match(%r{^(test|spec|features|gemfiles)/})
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 2.0.0"
+
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry-byebug"
 
-  spec.add_dependency "better_errors", "~> 3.0"
-  spec.add_dependency "pry", ">= 0.10"
+  spec.add_dependency "better_errors"
+  spec.add_dependency "pry", ">= 0.9"
   spec.add_dependency "binding_of_caller"
 end

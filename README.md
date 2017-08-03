@@ -32,9 +32,18 @@ When you see the Better Errors console, you can issue Pry-specific commands, suc
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bundle install` to install the basic dependencies.
+
+You can run the tests with the most recent versions of Pry and Better Errors by running `bundle exec rake`.
+
+To run the tests against the other sets of dependencies, though, you will need to use Appraisal.
+Run `appraisal install` to run install the dependencies for each of the possible combinations.
+
+Then you can run `appraisal rake` to run all tests, or `appraisal pry_0.09 rake` (for example) to only run the specs with Pry 0.09.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+On CI, the specs are run against each major release of Ruby in addition to each Appraisal gemfile.
 
 ## Contributing
 

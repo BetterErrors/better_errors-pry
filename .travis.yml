@@ -1,5 +1,18 @@
 sudo: false
 language: ruby
+cache: bundler
 rvm:
-  - 2.4.0
-before_install: gem install bundler -v 1.13.7
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - ruby-head
+gemfile:
+  - gemfiles/pry_0.9.gemfile
+  - gemfiles/pry_0.10.gemfile
+  - gemfiles/pry_0.11.gemfile
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - gemfile: gemfiles/pry-0.11.gemfile
