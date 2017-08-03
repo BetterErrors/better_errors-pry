@@ -3,6 +3,9 @@
 [Better Errors](https://github.com/charliesome/better_errors) is a gem that provides a very useful error page for Ruby web/API applications.
 This gem adds [Pry](http://pryrepl.org) support to Better Errors.
 
+(This support was previously added directly to Better Errors.
+This gem exists to extract Pry support from the main project.)
+
 ## Installation
 
 Add this to your application's Gemfile, in the same group as better_errors:

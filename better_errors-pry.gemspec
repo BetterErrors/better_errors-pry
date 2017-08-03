@@ -6,8 +6,8 @@ require 'better_errors/pry/version'
 Gem::Specification.new do |spec|
   spec.name          = "better_errors-pry"
   spec.version       = BetterErrors::Pry::VERSION
-  spec.authors       = ["Robin Daugherty"]
-  spec.email         = ["robin@robindaugherty.net"]
+  spec.authors       = ["Charlie Somerville", "Robin Daugherty"]
+  spec.email         = ["charlie@charliesomerville.com", "robin@robindaugherty.net"]
 
   spec.summary       = %q{Add Pry support to Better Errors}
   spec.description   = %q{Addon to Better Errors that adds Pry to the REPL.}
