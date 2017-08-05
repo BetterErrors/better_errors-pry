@@ -1,6 +1,6 @@
 require "better_errors/pry/version"
 require "better_errors"
-require "better_errors/repl/pry"
+require "better_errors/pry/repl/pry"
 
 module BetterErrors
   def self.use_pry!
