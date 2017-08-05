@@ -61,7 +61,9 @@ module BetterErrors
       end
 
       def prompt
-        if indent = @pry.instance_variable_get(:@indent) and !indent.indent_level.empty?
+        if @pry.respond_to? :select_prompt
+          [@pry.select_prompt, ""]
+        elsif indent = @pry.instance_variable_get(:@indent) and !indent.indent_level.empty?
           ["..", indent.indent_level]
         else
           [">>", ""]
