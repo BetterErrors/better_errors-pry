@@ -7,33 +7,51 @@
 [Better Errors](https://github.com/charliesome/better_errors) is a gem that provides a very useful error page for Ruby web/API applications.
 This gem adds [Pry](http://pryrepl.org) support to Better Errors.
 
-(This support was previously added directly to Better Errors.
-This gem exists to extract Pry support from the main project.)
+_This gem is intended to allow us to extract Pry support from the BetterErrors project itself.
+Through at least v2.4.0, Pry support is included in the project directly.
+Including this gem will replace the built-in support, and it is functionally the same at this time._
+
+## Why the separate gem for Pry support?
+
+BetterErrors supports a very large number of possible configurations.
+It supports Rails and non-Rails, with binding_of_caller and without, and all of the major versions of the Ruby interpreter.
+
+All of these combinations should be tested.
+Currently BetterErrors has 14 different test gemfiles, each running on 6 different versions of Ruby.
+And these are not comprehensive.
+
+Because the BetterErrors gem needs to support each of these configurations, it can't specify any of its optional dependencies' required versions.
+This makes BetterErrors difficult to maintain, and difficult for application maintainers to keep it and its dependencies up-to-date.
+
+(For example, for several years, the newer version of `binding_of_caller` did not work correctly, so applications that used BetterErrors were given instructions to lock `binding_of_caller` to a specific version.
+This is because BetterErrors could not specify the `binding_of_caller` version in its own gemspec, since it is optional.
+Once the issue was fixed, application maintainers had no way to know that it was possible to remove the fixed version.)
+
+The solution is to extract optional functionality that depends on additional gems from the BetterErrors project, and place it in a project like this one.
 
 ## Installation
 
-Add this to your application's Gemfile, in the same group as better_errors:
+Add this to your application's `Gemfile`, in the `development` group, just like better_errors:
 
 ```ruby
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'better_errors-pry'
 end
 ```
 
+You need to activate pry in the application (for example, in `config/environments/development.rb`):
+
+```ruby
+BetterErrors.use_pry!
+```
+
 **It's important to keep this in the development group.**
-See [Better Errors](https://github.com/charliesome/better_errors) for more information.
-
-[`binding_of_caller`](https://github.com/banister/binding_of_caller) is required by this gem, since it's necessary to be able to run Pry in the context of the exception that was raised.
-
-And then execute:
-
-    $ bundle
+See [Better Errors](https://github.com/charliesome/better_errors#security) for more information.
 
 ## Usage
 
-See [Better Errors](https://github.com/charliesome/better_errors#usage) for more information.
+See [Better Errors](https://github.com/charliesome/better_errors#usage) to get started.
 
 When you see the Better Errors console, you can issue Pry-specific commands, such as `ls` and `cd`.
 
@@ -63,4 +81,3 @@ On CI, the specs are run against each major release of Ruby in addition to each 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
