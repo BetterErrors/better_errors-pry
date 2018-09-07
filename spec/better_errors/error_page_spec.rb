@@ -41,7 +41,7 @@ RSpec.describe BetterErrors::ErrorPage do
         expect(do_eval).to include(
           highlighted_input: /stuff_was_done/,
           prefilled_input: '',
-          prompt: '>>',
+          prompt: '[2] pry(#<RSpec::ExampleGroups::BetterErrorsErrorPage::DoEval::WithPryEnabled>):1> ',
           result: "=> \"response\"\n",
         )
       end
